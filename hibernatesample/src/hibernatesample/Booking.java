@@ -4,8 +4,8 @@ public class Booking {
 	
 	private int bid;
 	private String from;
-	/*private String to;
-	private String price;
+	private String to;
+	/*private String price;
 	private String goods;*/
 	public int getBid() {
 		return bid;
@@ -37,5 +37,11 @@ public class Booking {
 	public void setGoods(String goods) {
 		this.goods = goods;
 	}*/
+	public String getTo() {
+		return to;
+	}
+	public void setTo(String to) {
+		this.to = to;
+	}
 
 }
