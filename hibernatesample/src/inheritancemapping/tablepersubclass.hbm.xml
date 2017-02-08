@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+ 
+ <hibernate-mapping>
+ 	<class name="inheritancemapping.PayMent" table="TPSC_Base">
+ 	<id name="pid">
+ 		<generator class="assigned"></generator>
+ 	</id>
+ 	<property name="amount"></property>
+ 	
+ 	<joined-subclass name="inheritancemapping.CreditCard" table="TPSC_ChidCC">
+ 	<key column="dummy1"></key>
+ 		<property name="CreditCard"></property>
+ 	</joined-subclass>
+ 	
+ 	<joined-subclass name="inheritancemapping.Cheque" table="TPSC_ChildCQ">
+ 	<key column="dummy2"></key>
+ 	<property name="cheque"></property>
+ 	</joined-subclass>
+ 	
+ 	</class>
+ </hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+ 
+ <hibernate-mapping>
+ 	<class name="inheritancemapping.PayMent" table="TablePerClass">
+ 	<id name="pid">
+ 		<generator class="assigned"></generator>
+ 	</id>
+ 	<discriminator column="dtype" type="string"></discriminator>
+ 	<property name="amount"></property>
+ 	
+ 	<subclass name= "inheritancemapping.CreditCard" discriminator-value="CC">
+ 		<property name="CreditCard"></property>
+ 	</subclass>
+ 	
+ 	<subclass name="inheritancemapping.Cheque" discriminator-value="cq">
+ 		<property name="cheque"></property>
+ 	</subclass>
+ 	</class>
+ 
+ </hibernate-mapping>

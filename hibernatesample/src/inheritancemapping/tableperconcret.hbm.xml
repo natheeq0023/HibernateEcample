@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+ 
+ <hibernate-mapping>
+ <class name="inheritancemapping.PayMent">
+ <id name="pid">
+ 	<generator class="assigned"></generator>
+ </id>
+ <property name="amount"></property>
+ 
+ <union-subclass name="inheritancemapping.CreditCard">
+ 	<property name="CreditCard"></property>
+ </union-subclass>
+ 
+ <union-subclass name="inheritancemapping.Cheque">
+ 	<property name="cheque"></property>
+ </union-subclass>
+ </class>
+ 	
+ </hibernate-mapping>
